@@ -1,0 +1,11 @@
+<body>
+    <script>
+        get();
+        async function get() {
+            url = 'http://ggoreb.com/api/toc.jsp';
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log(data);
+        }
+    </script>
+</body>
