@@ -6,15 +6,24 @@
 <body>
   <script>
     const animals = ['🐶', '🐱', '🐷'];
+    animals['a'] = 'd';
 
-    for(const key in animals) {
-      console.log(key);
+    //정석
+    for(let i = 0; i < animals.length; i++) {
+      console.log(animals[i]);
     }
 
-    for(const value of animals) {
+    //key를 알아낸 후 value 출력
+    for(let key in animals) {
+      console.log(animals[key]);
+    }
+
+    //key와 관계없이 value를 직접 얻어내기
+    for(let value of animals) {
       console.log(value);
     }
 
+    //배열의 API 활용
     animals.forEach(function(animal, index, array) {
       console.log(`${animal} | ${index} | ${array}`);
     });
