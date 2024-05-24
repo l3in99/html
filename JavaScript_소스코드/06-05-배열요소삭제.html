@@ -7,10 +7,12 @@
   <script>
     const animals = ['🐶', '🐱', '🐷', '🐵', '🦝', '🐰'];
 
-    animals.pop();
+    const last = animals.pop();
+    console.log(last);
     console.log(animals);
 
-    animals.shift();
+    const first = animals.shift();
+    console.log(first);
     console.log(animals);
 
     animals.unshift('🐔');

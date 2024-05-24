@@ -24,13 +24,14 @@
     }
 
     //배열의 API 활용
-    animals.forEach(function(animal, index, array) {
-      console.log(`${animal} | ${index} | ${array}`);
+    animals.forEach((v, i, a) => {
+      console.log(v, i, a);
     });
-    
-    animals.forEach((animal, index, array) => {
-      console.log(`${animal} | ${index} | ${array}`);
+
+    const list = animals.filter((v, i) => {
+      return i >= 1;
     });
+    console.log(list);
   </script>
 </body>
 

@@ -5,9 +5,33 @@
 
 <body>
   <script>
+    let 전역변수 = 10;
+
+    function out() {
+      let 변수 = 10;
+      return function inside() {
+        변수++;
+        console.log(변수);
+      }
+    }
+
+    a();
+    function a() {
+      b();
+    }
+    function b() {
+      c();
+    }
+    function c() {
+      alert('ccc');
+    }
     const simplePrint = function() {
       console.log('simplePrint!');
     }
+    navigator.geolocation.getCurrentPosition( (p) => {
+      console.log(p);
+      console.log(p.coords);
+    });
 
 //    const simplePrint = () =>
 //      console.log('simplePrint!');
