@@ -18,6 +18,12 @@
     delete animals[2];
     console.log(animals);
 
+    for(let i = 0; i < animals.length; i++) {
+      if(!animals[i]) {
+        animals[i] = '@';
+      }
+    }
+
     animals.unshift('🐔');
     console.log(animals);
   </script>
