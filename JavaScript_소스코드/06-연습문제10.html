@@ -22,6 +22,13 @@
       new Student('D', 40, false, 66),
       new Student('E', 18, true, 90),
     ];
+    const result = students.filter((v) => {
+      return v.score >= 50;
+    })
+    const newArray = result.map((value) => {
+      return value.name;
+    });
+    console.log(newArray);
   </script>
 </body>
 

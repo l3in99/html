@@ -7,9 +7,8 @@
   <script>
     const arr = [1, 2, 3, 4, 5];
 
-    const newArr = arr.map(function(value, idx, arr) {
-    console.log(value, idx, arr);
-      return value;
+    const newArr = arr.map(function(value) {
+      return `<a href='abc.com?id=${value}'>${value}</a>`;
     });
     
     console.log(`old array: ${arr}`);
