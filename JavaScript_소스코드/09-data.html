@@ -1,0 +1,29 @@
+<body>
+    <script>
+        get();
+        async function get() {
+            url = 'http://ggoreb.com/quiz/shop.jsp';
+            const res = await fetch(url);
+            const data = await res.json();
+            const list = data.list;
+            const address_obj = {};
+            const kind_obj = {};
+            list.forEach((v) => {
+                const address = v.address.substring(0,10);
+                const kind = v.kind;
+                if(address in address_obj){
+                address_obj[address] += 1;
+                } else {
+                address_obj[address] = 1;
+                }
+                if(kind in kind_obj){
+                kind_obj[kind] += 1;
+                } else {
+                kind_obj[kind] = 1;
+                }
+            });
+            console.log(address_obj);
+            console.log(kind_obj);
+        }
+    </script>
+</body>
