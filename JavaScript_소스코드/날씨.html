@@ -1,0 +1,14 @@
+<body>
+    <script>
+        navigator.geolocation.getCurrentPosition(async (pos) => {
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=6edee3c2aa182bc44d18ccb204c98a31`;
+            const res = await fetch(url);
+            const data = await res.json();
+            const main = data.main;
+            const temp = main.temp;
+            console.log(temp);
+        });
+    </script>
+</body>

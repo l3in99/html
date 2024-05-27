@@ -13,8 +13,12 @@
 <script>
   /* 마우스 드래그 방지 이벤트*/
   document.body.onselectstart = () => false;
-
   let count = 0;
+  const span = document.querySelector('h3 > span');
+  const h1 = document.querySelector('h1');
+  h1.addEventListener('click', () => {
+    span.innerHTML = ++count;
+  });
 
 </script>
 

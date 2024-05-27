@@ -9,7 +9,11 @@
   <a href='http://ggoreb.com'>이동</a>
 
   <script>
-    
+    const button = document.querySelector('a')
+    button.addEventListener('click', (event) => {
+      alert('차단');
+      event.preventDefault();
+    })
   </script>
 
 </body>

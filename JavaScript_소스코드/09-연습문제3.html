@@ -13,7 +13,23 @@
 
 <script>
   // 변환 공식 : inch * 2.54 => cm
-  
+  const input = document.querySelector('input');
+  const p = document.querySelector('p');
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+  const value = input.value;
+  p.innerHTML = value * 2.54 + " cm";
+  });
+  input.addEventListener('keyup', (e) => {
+    if(e.key >= '0' && e.key <= '9') {
+
+    } else {
+      let value = input.value;
+      value = value.substring(0, value.length-1);
+      input.value = value;
+    }
+    e.keyCode >= 48
+  })
 </script>
 
 </html>

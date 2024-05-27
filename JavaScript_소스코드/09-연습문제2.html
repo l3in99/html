@@ -22,7 +22,13 @@
 
   <script>
     document.querySelector('button').addEventListener('click', () => {
-
+      const target = document.querySelector('.target');
+      const obj = document.querySelector('img');
+      if(obj) obj.remove();
+      const num = parseInt(Math.random() *6 + 1);
+      const img = document.createElement('img');
+      img.src = `http://ggoreb.com/images/choco/${img}.jpg`;
+      target.appendChild(img);
     });
   </script>
 </body>

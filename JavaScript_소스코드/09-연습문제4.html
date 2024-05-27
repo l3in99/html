@@ -13,14 +13,19 @@
   const input = document.querySelector('[name=search]');
   input.addEventListener('focus', (event) => {
     let search = event.currentTarget.value;
-
+    if(!search) {
+      event.currentTarget.value = '#';
+    }
     
   });
 
-  input.addEventListener('keyup', (event) => {
+  input.addEventListener('keydown', (event) => {
     // space 입력 시 keyCode 32
     let keyCode = event.keyCode;
-    
+    if(keyCode==32) {
+      event.returnValue = false;
+      event.currentTarget.value += ', #';
+    }
 
 
   });
