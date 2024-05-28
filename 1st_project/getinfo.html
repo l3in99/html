@@ -1,0 +1,15 @@
+<body>
+    <script>
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        searchPerformances();
+        async function searchPerformances() {
+            const url = `http://localhost:8080/kopis/NewFile.jsp`;
+            const response = await fetch(url);
+            const data = await response.json();
+            const region = await response.p;
+            console.log(region);
+            const name = await response.이름;
+            console.log(name);
+        }
+    </script>
+</body>
