@@ -1,0 +1,93 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* 애니메이션이 화면을 넘지 않도록 설정 */
+}
+
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../background/soop1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    color: #333;
+    text-align: center;
+    transition: transform 1s ease-in-out; /* 슬라이드 애니메이션 */
+}
+
+h1 {
+    font-size: 5rem;
+    color: black;
+    font-family: "Dongle", sans-serif;
+    line-height: 0.8;
+    margin-bottom: 30px;
+}
+
+.start-button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.start-button {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 2px solid #000;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+}
+
+/* 슬라이드 애니메이션 */
+.slide-out {
+    animation: slide-out 1s forwards;
+}
+
+@keyframes slide-out {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+/* 모바일 전용 스타일 */
+@media (max-width: 600px) {
+    #page-container {
+        background-image: url('../background/soop3.avif'); /* 모바일 배경 이미지 */
+    }
+
+    h1 {
+        font-size: 90px;
+        height: 115px;
+        padding: 20px;
+        color: white;
+        text-shadow: 1px 5px #000, -1px -3px #000, -3px 0px #000, 2px -1px #000;
+    }
+
+    .start-button {
+        width: 80px; /* 모바일 크기 */
+        height: 80px; /* 모바일 크기 */
+        border: 2px solid #000;
+    }
+}
